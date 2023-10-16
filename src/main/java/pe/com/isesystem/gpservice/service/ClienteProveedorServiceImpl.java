@@ -22,13 +22,13 @@ public class ClienteProveedorServiceImpl implements ClienteProveedorService {
 
     @Override
     public Page<ClienteProveedor> obtenerClientesPaginados(Pageable pageable) {
-        return clienteProveedorRepository.findAllByEstaActi(true,pageable);
+        return clienteProveedorRepository.findAll(pageable);
     }
 
     @Override
     public List<ClienteProveedor> obtenerTodos() {
 
-        return clienteProveedorRepository.findAll();
+        return clienteProveedorRepository.encontrarTodos();
     }
 
 }

@@ -12,6 +12,6 @@ public class ClienteProveedorDto {
     private String ruc;
     private String direccion;
     private String tipoPers;
-    private boolean estaActi;
+    private String estaActi;
 
 }

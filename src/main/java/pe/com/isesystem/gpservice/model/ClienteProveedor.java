@@ -36,6 +36,6 @@ public class ClienteProveedor {
 
     @Nullable
     @Column(name="esta_acti")
-    private boolean estaActi=true;
+    private String estaActi;
 
 }
