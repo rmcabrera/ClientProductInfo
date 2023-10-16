@@ -12,6 +12,8 @@ import pe.com.isesystem.gpservice.dto.PaginationRequestDto;
 import pe.com.isesystem.gpservice.model.ClienteProveedor;
 import pe.com.isesystem.gpservice.service.ClienteProveedorService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/clienteProveedor")
 public class ClienteProveedorController {
@@ -29,6 +31,18 @@ public class ClienteProveedorController {
     }
 
     @GetMapping("/todos")
+    public ResponseEntity<List<ClienteProveedor>> obtenerAllClienteProveedor() {
+
+        List<ClienteProveedor> clientes = clienteProveedorService.obtenerTodos();
+        if (clientes != null) {
+            return new ResponseEntity<>(clientes, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+    @GetMapping("/todosPaginado")
     public Page<ClienteProveedor> obtenerTodosLosClientes(
             @RequestBody PaginationRequestDto paginationRequestDTO) {
 

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import pe.com.isesystem.gpservice.model.ClienteProveedor;
 import pe.com.isesystem.gpservice.repository.ClienteProveedorRepository;
 
+import java.util.List;
+
 @Service
 public class ClienteProveedorServiceImpl implements ClienteProveedorService {
 
@@ -21,6 +23,12 @@ public class ClienteProveedorServiceImpl implements ClienteProveedorService {
     @Override
     public Page<ClienteProveedor> obtenerClientesPaginados(Pageable pageable) {
         return clienteProveedorRepository.findAllByEstaActi(true,pageable);
+    }
+
+    @Override
+    public List<ClienteProveedor> obtenerTodos() {
+
+        return clienteProveedorRepository.findAll();
     }
 
 }
