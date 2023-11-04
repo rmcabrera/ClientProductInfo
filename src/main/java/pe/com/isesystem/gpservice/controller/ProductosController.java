@@ -33,7 +33,6 @@ public class ProductosController {
 
     @GetMapping("/todos")
     public ResponseEntity<List<Productos>> obtenerAllProductos() {
-
         List<Productos> productosDtos = productosService.obtenerTodos();
         if (productosDtos != null) {
             return new ResponseEntity<>(productosDtos, HttpStatus.OK);
